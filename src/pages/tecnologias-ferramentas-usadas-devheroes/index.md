@@ -5,6 +5,8 @@ spoiler: Seguem algumas das tecnologias e ferramentas usadas no desenvolvimento 
 cta: tecnologias
 ---
 
+Seguem algumas das tecnologias e ferramentas usadas no desenvolvimento do DevHeroes. Para quem, assim como eu, gosta de saber esses detalhes.
+
 ## Tecnologias
 
 - [Gatsby](https://www.gatsbyjs.org/)
