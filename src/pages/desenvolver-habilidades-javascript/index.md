@@ -1,6 +1,7 @@
 ---
 title: 'Como desenvolver suas habilidades em JavaScript'
 date: '2016-11-18'
+author: mdapper
 spoiler: A "DevHeroes School for Gifted Developers" foi fundada para treinar novos desenvolvedores a controlar suas habilidades em JavaScript recém descobertas e ajudar a promover um ambiente amigável entre usuários de diferentes tecnologias.
 cta: skills
 ---

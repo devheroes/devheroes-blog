@@ -1,6 +1,7 @@
 ---
 title: 'Como declarar variáveis usando var, let e const a partir da ES6 - JavaScript (S01E06)'
 date: '2017-05-25'
+author: mdapper
 spoiler: Neste artigo vamos entender a diferença entre `var`, `let` e `const`, e quando devemos usar cada um deles para declarar variáveis em JavaScript.
 cta: javascript
 ---

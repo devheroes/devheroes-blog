@@ -1,6 +1,7 @@
 ---
 title: 'Tecnologias e ferramentas usadas no DevHeroes'
 date: '2016-10-12'
+author: mdapper
 spoiler: Seguem algumas das tecnologias e ferramentas usadas no desenvolvimento do DevHeroes. Para quem, assim como eu, gosta de saber esses detalhes.
 cta: tecnologias
 ---

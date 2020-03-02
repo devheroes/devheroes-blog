@@ -1,9 +1,11 @@
 import React from 'react';
-import profilePic from '../assets/profile-pic.jpg';
 import { rhythm } from '../utils/typography';
+
+import { authors } from '../utils/authors';
 
 class Bio extends React.Component {
   render() {
+    const { author } = this.props;
     return (
       <div
         style={{
@@ -12,8 +14,8 @@ class Bio extends React.Component {
         }}
       >
         <img
-          src={profilePic}
-          alt={`Marcelo Dapper`}
+          src={authors[author].profilePic}
+          alt={authors[author].name}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
@@ -23,9 +25,8 @@ class Bio extends React.Component {
           }}
         />
         <p style={{ maxWidth: 310 }}>
-          <a href="https://mobile.twitter.com/mdapper">Marcelo Dapper</a> -
-          Desenvolvedor front-end, atualmente focado em construir aplicações com
-          JavaScript e React
+          <a href={authors[author].url}>{authors[author].name}</a> —{' '}
+          {authors[author].bio}
         </p>
       </div>
     );

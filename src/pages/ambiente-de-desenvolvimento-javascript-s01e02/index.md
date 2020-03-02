@@ -1,6 +1,7 @@
 ---
 title: 'Ambiente de Desenvolvimento - JavaScript (S01E02)'
 date: '2016-11-29'
+author: mdapper
 spoiler: Neste post vamos ver como configurar um ambiente de desenvolvimento para podermos programar em JavaScript.
 cta: environment
 ---

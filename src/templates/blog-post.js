@@ -187,7 +187,7 @@ class BlogPostTemplate extends React.Component {
               DevHeroes
             </Link>
           </h3>
-          <Bio />
+          <Bio author={post.frontmatter.author} />
           <nav>
             <ul
               style={{
@@ -241,6 +241,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        author
         spoiler
         cta
       }

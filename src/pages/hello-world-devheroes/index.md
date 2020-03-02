@@ -1,6 +1,7 @@
 ---
 title: 'console.log("Hello World from DevHeroes!");'
 date: '2016-09-28'
+author: mdapper
 spoiler: Sejam bem vindos ao DevHeroes!
 cta: devheroes
 ---
