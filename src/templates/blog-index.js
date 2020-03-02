@@ -38,6 +38,8 @@ class BlogIndexTemplate extends React.Component {
 
           {posts.map(({ node }) => {
             const title = get(node, 'frontmatter.title') || node.fields.slug;
+            const author = node.frontmatter.author;
+
             return (
               <article key={node.fields.slug}>
                 <header>
@@ -56,11 +58,30 @@ class BlogIndexTemplate extends React.Component {
                       {title}
                     </Link>
                   </h3>
-                  <small>
-                    {formatPostDate(node.frontmatter.date, langKey)}
-                    {` • ${authors[node.frontmatter.author].name}`}
-                    {` • ${formatReadingTime(node.timeToRead)}`}
-                  </small>
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      margin: '8px 0',
+                    }}
+                  >
+                    <img
+                      src={authors[author].profilePic}
+                      alt={authors[author].name}
+                      style={{
+                        marginRight: rhythm(1 / 2),
+                        marginBottom: 0,
+                        width: rhythm(1.25),
+                        height: rhythm(1.25),
+                        borderRadius: '50%',
+                      }}
+                    />
+                    <small>
+                      {authors[author].name}
+                      {` • ${formatPostDate(node.frontmatter.date, langKey)}`}
+                      {` • ${formatReadingTime(node.timeToRead)}`}
+                    </small>
+                  </div>
                 </header>
                 <p
                   dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
