@@ -9,6 +9,8 @@ import SEO from '../components/SEO';
 import get from 'lodash/get';
 import { rhythm } from '../utils/typography';
 
+import { authors } from '../utils/authors';
+
 class BlogIndexTemplate extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
@@ -56,6 +58,7 @@ class BlogIndexTemplate extends React.Component {
                   </h3>
                   <small>
                     {formatPostDate(node.frontmatter.date, langKey)}
+                    {` • ${authors[node.frontmatter.author].name}`}
                     {` • ${formatReadingTime(node.timeToRead)}`}
                   </small>
                 </header>
@@ -94,6 +97,7 @@ export const pageQuery = graphql`
           }
           timeToRead
           frontmatter {
+            author
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
