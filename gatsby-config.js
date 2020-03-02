@@ -195,5 +195,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-catch-links`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets\/.*\.svg/, // See below to configure properly
+        },
+      },
+    },
   ],
 };
