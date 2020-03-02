@@ -61,14 +61,14 @@ Quanto a decisão de usar ou não, depende da necessidade. Se você vai trabalha
 
 Então vamos começar botando um pouco a mão na massa e alternando entre os conceitos usados pelo webpack. Inicialmente vamos iniciar um projeto simples com nosso [NPM](https://www.npmjs.com/). O mesmo processo pode ser usado com o [Yarn](https://yarnpkg.com/) caso prefira trabalhar com ele:
 
-```bash
-$ npm init
+```bash{outputLines: 2}
+npm init
 ```
 
 Feito isso e terminado a configuração básica do NPM podemos adicionar o webpack em nosso projeto. Vamos usar a versão mais recente, caso queira saber quais são algumas das novas features do Webpack 2 veja [este artigo](https://medium.com/@oieduardorabelo/o-que-h%C3%A1-de-novo-no-webpack-2-81ad9fa08927):
 
-```bash
-$ npm install --save-dev webpack
+```bash{outputLines: 2}
+npm install --save-dev webpack
 ```
 
 Lembre-se que se estiver utilizando Linux, a depender do seu ambiente, é necessário adicionar o comando sudo: $ sudo npm instal....
@@ -77,8 +77,8 @@ Com isso temos o webpack pronto pra ser usado em nosso projeto e adicionado nas 
 
 Para averiguar se tudo está ok, execute o seguinte comando no terminal:
 
-```bash
-$ ./node_modules/.bin/webpack
+```bash{outputLines: 2}
+./node_modules/.bin/webpack
 ```
 
 A saída deverá ser algo como:
@@ -111,8 +111,8 @@ Então estamos dizendo: webpack, eu vou ter um arquivo chamado index.js onde tod
 
 Lógicamente, vamos criar esse arquivo index.js, por enquanto, vazio. Se for Linux e estiver no terminal, pode usar:
 
-```bash
-$ touch index.js
+```bash{outputLines: 2}
+touch index.js
 ```
 
 Outra coisa a se observar é que o entry point não se limita somente a isso. Na verdade toda configuração do webpack pode ser bem complexa e flexível. Como sugere a [documentação do webpack](https://webpack.js.org/concepts/entry-points/) podemos utilizar múltiplos entries:
@@ -162,8 +162,8 @@ A configuração consiste de dois propósitos:
 
 Para o nosso projeto de teste, vamos utilizar ES6 (ES2015), e como essa versão não é compreendida pelos navegadores ainda, é necessário um processo de transpilação que basicamente irá converter nosso código ES6 em um código "entendível" pelo browser como o ES5. Para fazer esse trabalho de transpilação usamos o Babel e podemos usar um loader do webpack que é específico pra fazer essa transpilação para nós. Antes de mais nada vamos adicionar as dependências exigidas para trabalharmos com Babel:
 
-```bash
-$ npm install babel-loader babel-core babel-preset-es2015
+```bash{outputLines: 2}
+npm install babel-loader babel-core babel-preset-es2015
 ```
 
 Perceba que baixamos o loader para o webpack e baixamos também o core do Babel juntamente com o Preset para ES6.
@@ -348,8 +348,8 @@ module.exports = {
 
 Já criamos mais no começo do artigo o nosso arquivo index.js então vamos agora criar nossos arquivos index.html e um diretório chamado dist e que especificamos lá na chave output.path. Isso é mais para organização do código gerado pelo webpack mas fica a gosto do freguês uma configuração pessoal em relação a onde armazenar o código empacotado.
 
-```bash
-$ touch index.html && mkdir dist
+```bash{outputLines: 2}
+touch index.html && mkdir dist
 ```
 
 A ideia é: teremos uma página em HTML que simplesmente terá um input e um botão de pesquisar. O que a nossa página fará é, dado um determinado CEP digitado pelo usuário, quando ele clicar em pesquisar, ser exibido abaixo a cidade referente a esse CEP. Vamos ao nosso index.html:
@@ -380,8 +380,8 @@ Uma observação aqui é a tag script que adicionamos. Percebeu que ela aponta p
 
 Para realizar a pesquisa por CEP utilizaremos uma excelente lib feita pelo [Filipe Deschamps](https://twitter.com/FilipeDeschamps), a [cep-promise](https://github.com/filipedeschamps/cep-promise) que é baseada em [Promises](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise). Vamos instalar via NPM:
 
-```bash
-$ npm install --save cep-promise
+```bash{outputLines: 2}
+npm install --save cep-promise
 ```
 
 E finalmente vamos para o nosso arquivo index.js que conterá a nossa simples lógica JavaScript:
@@ -420,8 +420,8 @@ Se dermos uma olhada no arquivo final gerado dentro da pasta dist/ veremos que e
 
 Para executar nosso projeto poderíamos utilizar o webpack-dev-server como mencionei anteriormente mas por hora, vamos utilizar um utilitário que facilita muito o processo de "servir" páginas em ambiente local. É o [lite-server](https://github.com/johnpapa/lite-server) do [John Papa](https://twitter.com/John_Papa). Basta seguir os passos inicias descritos na documentação, no meu caso, instalei globalmente mesmo. Uma vez instalado posso usar o seguinte comando dentro do projeto raiz:
 
-```bash
-$ lite-server
+```bash{outputLines: 2}
+lite-server
 ```
 
 O servidor irá ler automaticamente o nosso index.html e nos fornecer um endereço local para acessarmos a nossa aplicação.

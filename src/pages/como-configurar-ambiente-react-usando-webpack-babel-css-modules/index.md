@@ -72,22 +72,22 @@ Se você ainda não tem em seu projeto um arquivo chamado `package.json` vamos c
 
 Podemos criar este arquivo usando o comando abaixo em nosso terminal ou console:
 
-```bash
-$ npm init
+```bash{outputLines: 2-4}
+npm init
 
 # ou se preferir usar Yarn
 
-$ yarn init
+yarn init
 ```
 
 Preencha os dados que forem solicitados conforme preferir. Em seguida podemos instalar as `dependencies` do `react` e `react-dom` conforme segue:
 
-```bash
-$ npm install --save react react-dom
+```bash{outputLines: 2-4}
+npm install --save react react-dom
 
 # ou se preferir usar Yarn
 
-$ yarn add react react-dom
+yarn add react react-dom
 ```
 
 Pronto, React instalado. Mas ainda não conseguimos fazer muita coisa só com isso. Vamos ver como usar o Webpack em conjunto com o React.
@@ -98,12 +98,12 @@ Se ainda não estiver familiarizado com o Webpack leia primeiro o excelente [art
 
 Para instalar o Webpack como uma `devDependencies` use o comando a seguir:
 
-```bash
-$ npm install --save-dev webpack
+```bash{outputLines: 2-4}
+npm install --save-dev webpack
 
 # ou se preferir usar Yarn
 
-$ yarn add --dev webpack
+yarn add --dev webpack
 ```
 
 Não vamos instalar ele globalmente pois não é uma prática recomendada pela documentação do Webpack. Se fizéssemos isso, ficaríamos presos a uma versão específica e poderíamos ter erros em projetos que usam uma versão diferente do Webpack.
@@ -158,12 +158,12 @@ Vamos usar ES2015 (ES6) e JSX para a criação de nossos componentes React, para
 
 Precisamos instalar ele e algumas dependências para usar em conjunto com o Webpack conforme segue:
 
-```bash
-$ npm install --save-dev babel-loader babel-core babel-preset-env babel-preset-react
+```bash{outputLines: 2-4}
+npm install --save-dev babel-loader babel-core babel-preset-env babel-preset-react
 
 # ou se preferir usar Yarn
 
-$ yarn add --dev babel-loader babel-core babel-preset-env babel-preset-react
+yarn add --dev babel-loader babel-core babel-preset-env babel-preset-react
 ```
 
 Instalamos o *loader* do Babel para o Webpack `babel-loader`, o core do Babel `babel-core`, o *preset* para usarmos os recursos mais recentes da ES `babel-preset-env` e por último o *preset* para React `babel-preset-react` que permite usarmos JSX.
@@ -254,12 +254,12 @@ Existem diferentes maneiras de trabalhar com *styles* usando React e Webpack. Aq
 
 Para isso vamos precisar instalar mais algumas `devDependencies` conforme segue:
 
-```bash
-$ npm install --save-dev style-loader css-loader postcss-loader
+```bash{outputLines: 2-4}
+npm install --save-dev style-loader css-loader postcss-loader
 
 # ou se preferir usar Yarn
 
-$ yarn add --dev style-loader css-loader postcss-loader
+yarn add --dev style-loader css-loader postcss-loader
 ```
 
 Vamos adicionar agora em nosso arquivo `webpack.config.js` a regra para processar nosso CSS:
@@ -403,12 +403,12 @@ Bom, isso concluí a configuração de nossas `rules`. Vamos ver agora como cria
 
 Primeiro vamos instalar o servidor do Webpack e um pacote para fazer o *Hot Module Replacement (HMR)*:
 
-```bash
-$ npm install --save-dev webpack-dev-server react-hot-loader@next
+```bash{outputLines: 2-4}
+npm install --save-dev webpack-dev-server react-hot-loader@next
 
 # ou se preferir usar Yarn
 
-$ yarn add --dev webpack-dev-server react-hot-loader@next
+yarn add --dev webpack-dev-server react-hot-loader@next
 ```
 
 Aqui instalamos o Webpack Dev Server e também fizemos a instalação do pacote `react-hot-loader`, ele vai permitir que ao fazermos qualquer alteração em nossos componentes React o navegador seja atualizado imediatamente com apenas esta mudança. Usamos a flag `@next` para instalarmos a versão mais recente dele que funciona com o Webpack 2.
@@ -541,12 +541,12 @@ Pronto, configurações feitas. Precisamos apenas adicionar um *npm script* `"st
 
 Toda vez que dermos o comando a seguir em nosso terminal, o bundle vai ser gerado e o Webpack Dev Server iniciado em modo *watch*:
 
-```bash
-$ npm start
+```bash{outputLines: 2-4}
+npm start
 
 # ou se preferir usar Yarn
 
-$ yarn run start
+yarn start
 ```
 
 Mas ainda não vamos fazer isso, primeiro vamos criar alguns componentes React básicos.
@@ -643,12 +643,12 @@ Chegou a hora de testar se tudo está funcionando.
 
 Para isso vamos em nosso terminal executar o comando abaixo:
 
-```bash
-$ npm start
+```bash{outputLines: 2-4}
+npm start
 
 # ou se preferir usar Yarn
 
-$ yarn run start
+yarn start
 ```
 
 Isso vai iniciar nosso servidor do Webpack.
@@ -796,12 +796,12 @@ Notar que o CSS é inserido pelo nosso *bundle* em nossa página, e ele cria um 
 
 Caso você prefira usar Sass em seus componentes, precisa primeiro instalar as seguintes dependências:
 
-```bash
-$ npm install --save-dev sass-loader node-sass
+```bash{outputLines: 2-4}
+npm install --save-dev sass-loader node-sass
 
 # ou se preferir usar Yarn
 
-$ yarn add --dev sass-loader node-sass
+yarn add --dev sass-loader node-sass
 ```
 
 Vamos instalar o loader do Webpack `sass-loader` para processar nossos arquivos `.scss`, quem faz a transformação para CSS é o pacote `node-sass`, por isso precisamos dele também.
@@ -885,12 +885,12 @@ A única mudança foi na segunda linha, onde importamos agora nosso arquivo Sass
 
 Como nós modificamos a configuração do Webpack, para ver o resultado você deve parar o Webpack Dev Server, caso esteja rodando, e então iniciar ele novamente:
 
-```bash
-$ npm start
+```bash{outputLines: 2-4}
+npm start
 
 # ou se preferir usar Yarn
 
-$ yarn run start
+yarn start
 ```
 
 Pronto, dessa forma podemos usar também Sass caso precisarmos, notar que neste caso estamos usando ele em conjunto com o CSS Modules.

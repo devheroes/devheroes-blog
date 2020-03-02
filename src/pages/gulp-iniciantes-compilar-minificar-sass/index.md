@@ -36,8 +36,8 @@ Para quem usa Linux, saiu um artigo recente no [Tableless](https://tableless.com
 
 Assim que tiver o Node instalado podemos instalar o *Gulp* usando o comando que segue do NPM:
 
-```bash
-$ npm install --global gulp-cli
+```bash{outputLines: 2}
+npm install --global gulp-cli
 ```
 
 Esse comando vai instalar globalmente `--global` o `gulp-cli` para utilizarmos ele em qualquer projeto.
@@ -46,8 +46,8 @@ Se você ainda não tem em seu projeto um arquivo chamado `package.json` vamos c
 
 Podemos criar este arquivo usando o comando abaixo:
 
-```bash
-$ npm init
+```bash{outputLines: 2}
+npm init
 ```
 
 Vão aparecer algumas perguntas para você responder que são usadas para poder criar o arquivo `package.json`. Não é preciso preencher todos os dados que vão ser solicitados, você pode fazer isso mais tarde se for preciso.
@@ -77,8 +77,8 @@ O arquivo `package.json` criado terá o seguinte conteúdo:
 
 Uma vez que temos em nosso projeto o arquivo `package.json` podemos instalar a dependência local do *Gulp* usando o comando abaixo:
 
-```bash
-$ npm install --save-dev gulp
+```bash{outputLines: 2}
+npm install --save-dev gulp
 ```
 
 Após fazermos isso essa dependência será baixada para a pasta `node_modules`, se procurar dentro dela vai encontrar uma pasta chamada `gulp`:
@@ -159,8 +159,8 @@ gulp.task('default', function() {
 
 Com o trecho acima estamos criando a tarefa padrão do *Gulp*, para rodarmos ela basta no nosso *command line* darmos o seguinte comando:
 
-```bash
-$ gulp
+```bash{outputLines: 2}
+gulp
 ```
 
 Teremos o seguinte resultado:
@@ -173,8 +173,8 @@ Temos, destacado pelo retângulo vermelho, o log que definimos em nossa tarefa `
 
 O *Gulp* sozinho não realiza muita coisa, precisamos instalar plugins para as funcionalidades que desejamos. Para *Sass* vamos instalar o seguinte plugin `gulp-sass` usando o comando que segue:
 
-```bash
-$ npm install --save-dev gulp-sass
+```bash{outputLines: 2}
+npm install --save-dev gulp-sass
 ```
 
 Em nosso arquivo `gulpfile.js` precisamos fazer o `require` deste pacote e a atribuição para a variável conforme segue na linha 2:
@@ -277,8 +277,8 @@ Podemos ver acima que a tarefa é a mesma que a de desenvolvimento. Modificamos 
 
 Mas existe um problema, essa tarefa vai criar um arquivo com o mesmo nome do arquivo gerado pela `sassdev`. Para contornarmos isso vamos instalar um plugin do *Gulp* chamado `gulp-rename` através do comando que segue:
 
-```bash
-$ npm install --save-dev gulp-rename
+```bash{outputLines: 2}
+npm install --save-dev gulp-rename
 ```
 
 Depois precisamos adicionar ele como `require` em nosso arquivo `gulpfile.js` conforme segue na linha 3:
@@ -416,8 +416,8 @@ Vamos agora escrever um código em *Sass* e ver se está funcionando corretament
 
 Em nosso *command line* vamos rodar o comando abaixo:
 
-```bash
-$ gulp
+```bash{outputLines: 2}
+gulp
 ```
 
 Vamos na pasta `/css` e verificar se os arquivos `style.css` e `style.min.css` foram criados. No arquivo não minificado devemos ter o seguinte código CSS compilado:
