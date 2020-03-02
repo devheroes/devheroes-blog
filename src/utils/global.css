@@ -87,21 +87,18 @@ body:lang(ko) article {
 }
 
 /**
- * Based on copypasta from Remy Bach and Sarah Drasner
+ * Based on copypasta from Sara Vieira
  */
 code[class*='language-'],
 pre[class*='language-'] {
-  color: white;
-  background: none;
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
-  font-feature-settings: normal;
+  color: #d6deeb;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
-  margin-bottom: 0;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -113,33 +110,141 @@ pre[class*='language-'] {
   hyphens: none;
 }
 
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  background: rgba(29, 59, 83, 0.99);
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  background: rgba(29, 59, 83, 0.99);
+}
+
+@media print {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code,
+pre {
+  color: white;
+  background: #011627;
+}
+
+:not(pre) > code {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: #637777;
+  font-style: italic;
+}
+
+.namespace {
+  color: #b2ccd6;
+}
+
+.token.deleted {
+  color: rgba(239, 83, 80, 0.56);
+  font-style: italic;
+}
+
+.token.symbol,
+.token.property {
+  color: #80cbc4;
+}
+
+.token.tag,
+.token.punctuation {
+  color: #7fdbca;
+}
+.token.operator,
+.token.keyword {
+  color: #c792ea;
+}
+
+.token.boolean {
+  color: #ff5874;
+}
+
+.token.number {
+  color: #f78c6c;
+}
+
+.token.constant,
+.token.function,
+.token.builtin,
+.token.char {
+  color: #82aaff;
+}
+
+.token.selector,
+.token.doctype {
+  color: #c792ea;
+  font-style: italic;
+}
+
+.token.attr-name,
+.token.inserted {
+  color: #addb67;
+  font-style: italic;
+}
+
+.token.string,
+.token.url,
+.token.entity,
+.language-css .token.string,
+.style .token.string {
+  color: #ecc48d;
+}
+
+.token.class-name {
+  color: #addb67;
+}
+
+.token.atrule,
+.token.attr-value {
+  color: #ffcb8b;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #d6deeb;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
 /* Code blocks */
 pre[class*='language-'] {
   overflow: auto;
   padding: 1.3125rem;
-}
-
-pre[class*='language-']::-moz-selection {
-  /* Firefox */
-  background: hsl(207, 4%, 16%);
-}
-
-pre[class*='language-']::selection {
-  /* Safari */
-  background: hsl(207, 4%, 16%);
-}
-
-/* Text Selection colour */
-pre[class*='language-']::-moz-selection,
-pre[class*='language-'] ::-moz-selection {
-  text-shadow: none;
-  background: hsla(0, 0%, 100%, 0.15);
-}
-
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection {
-  text-shadow: none;
-  background: hsla(0, 0%, 100%, 0.15);
 }
 
 /* Inline code */
@@ -151,70 +256,30 @@ pre[class*='language-'] ::selection {
   white-space: normal;
 }
 
-.token.attr-name {
-  color: rgb(173, 219, 103);
-  font-style: italic;
-}
-
-.token.comment {
-  color: rgb(128, 147, 147);
-}
-
-.token.string,
-.token.url {
-  color: rgb(173, 219, 103);
-}
-
-.token.variable {
-  color: rgb(214, 222, 235);
-}
-
-.token.number {
-  color: rgb(247, 140, 108);
-}
-
-.token.builtin,
-.token.char,
-.token.constant,
-.token.function {
-  color: rgb(130, 170, 255);
-}
-
-.token.punctuation {
-  color: rgb(199, 146, 234);
-}
-
-.token.selector,
-.token.doctype {
-  color: rgb(199, 146, 234);
-  font-style: 'italic';
-}
-
-.token.class-name {
-  color: rgb(255, 203, 139);
-}
-
-.token.tag,
-.token.operator,
-.token.keyword {
-  color: #ffa7c4;
-}
-
-.token.boolean {
-  color: rgb(255, 88, 116);
-}
-
-.token.property {
-  color: rgb(128, 203, 196);
-}
-
-.token.namespace {
-  color: rgb(178, 204, 214);
-}
-
 pre[data-line] {
   padding: 1em 0 1em 3em;
   position: relative;
+}
+
+.command-line-prompt > span:before {
+  color: #999;
+  content: ' ';
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: '$' !important;
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user='root']:before {
+  content: '$';
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
 }
 
 .gatsby-highlight-code-line {
@@ -224,7 +289,7 @@ pre[data-line] {
   margin-left: -1.3125rem;
   padding-right: 1em;
   padding-left: 1.25em;
-  border-left: 0.25em solid #ffa7c4;
+  border-left: 0.25em solid var(--purple);
 }
 
 .gatsby-highlight {

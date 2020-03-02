@@ -39,6 +39,11 @@ module.exports = {
             resolve: 'gatsby-remark-prismjs',
             options: {
               inlineCodeMarker: '÷',
+              prompt: {
+                user: 'devheroes',
+                host: 'localhost',
+                global: false,
+              },
             },
           },
           'gatsby-remark-copy-linked-files',
