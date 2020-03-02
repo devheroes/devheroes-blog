@@ -9,8 +9,6 @@ Desenvolver e configurar o ambiente para o desenvolvimento web moderno pode ser 
 
 Cada solução - cada sigla - resolve um problema específico e com o Webpack não é diferente. Na verdade ele é tão poderoso que podemos usa-lo para mais tarefas além da sua proposta inicial.
 
-**Atualização 1 - 16/02/2017:** Fiz uma atualização no artigo por causa da publicação no *npm* do [Webpack 2](https://medium.com/webpack/webpack-2-and-beyond-40520af9067f#.rbwbrqj9n) como o *latest*, ou seja, para instalar ele não precisamos mais da flag `@beta`. Portanto o comando de instalação dele foi atualizado para `npm install --save-dev webpack`.
-
 ## O que é o webpack?
 
 Se você está começando ou de olho nas novas soluções para desenvolvimento web como o [Angular](https://angular.io/), [React](https://facebook.github.io/react/), ou qualquer outro framework/biblioteca, deve ter percebido a presença ou menção a essa ferramenta. Sendo direto, o Webpack é um **bundler** (empacotador) de módulos JavaScript.
@@ -135,7 +133,7 @@ module.exports = config;
 
 Uma vez feito todo o empacotamento, o webpack precisa "cuspir" tudo isso em uma saída. Então precisamos dizer para o webpack onde será e como será essa saída e como o nosso código empacotado irá se comportar. Fazemos isso na propriedade output do webpack. Algo assim:
 
-```jsx{7-10}
+```jsx{numberLines: true}{7-10}
 var path = require('path');
 
 module.exports = {
@@ -172,7 +170,7 @@ Perceba que baixamos o loader para o webpack e baixamos também o core do Babel 
 
 Com tudo instalado podemos incluir no nosso arquivo de configuração uma nova chave chamada modules. Veja como fica a configuração do Babel:
 
-```jsx{12-21}
+```jsx{numberLines: true}{12-21}
 var path = require('path');
 
 module.exports = {
@@ -204,7 +202,7 @@ Com essa configuração, o Webpack irá procurar todos os arquivos que combinam 
 
 Poderíamos usar outros loaders, como exemplo, para SASS ou LESS ou para trabalhar com nossas fontes mas como não usaremos nesse artigo, deixo como dever de casa para o leitor. Apenas para entender como seria um arquivo de configuração com mais loaders, observe esse exemplo:
 
-```jsx{15-16,19-20}
+```jsx{numberLines: true}{15-16,19-20}
 const loaders = {
   module: {
     rules: [
@@ -265,7 +263,7 @@ Além de falar pro webpack qual o meu arquivo inicial, de start da árvore de de
 
 No nosso exemplo final não precisaremos usar Plugins mas vamos ver como ficaria nosso arquivo de configuração com a adição de um plugin:
 
-```jsx{33}
+```jsx{numberLines: true}{33}
 const webpack = require('webpack');
 const path = require('path');
 
@@ -356,7 +354,7 @@ $ touch index.html && mkdir dist
 
 A ideia é: teremos uma página em HTML que simplesmente terá um input e um botão de pesquisar. O que a nossa página fará é, dado um determinado CEP digitado pelo usuário, quando ele clicar em pesquisar, ser exibido abaixo a cidade referente a esse CEP. Vamos ao nosso index.html:
 
-```html{17}
+```html{numberLines: true}{17}
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -388,7 +386,7 @@ $ npm install --save cep-promise
 
 E finalmente vamos para o nosso arquivo index.js que conterá a nossa simples lógica JavaScript:
 
-```jsx{1,6,9}
+```jsx{numberLines: true}{1,6,9}
 import cep from 'cep-promise';
 
 document

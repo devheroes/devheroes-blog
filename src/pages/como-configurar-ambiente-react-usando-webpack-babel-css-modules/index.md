@@ -38,7 +38,7 @@ Vamos começar criando uma estrutura básica inicial de pastas e arquivos confor
 
 Dentro do arquivo `./public/index.html` teremos o seguinte:
 
-```html{7,8}
+```html{numberLines: true}{7,8}
 <!DOCTYPE html>
 <html>
   <head>
@@ -110,7 +110,7 @@ Não vamos instalar ele globalmente pois não é uma prática recomendada pela d
 
 Agora vamos criar o arquivo `webpack.config.js`, nele vamos fazer todas as configurações necessárias para criarmos nosso arquivo `bundle.js`. A seguir segue a configuração inicial:
 
-```jsx{5,8-10,14,17,18}
+```jsx{numberLines: true}{5,8-10,14,17,18}
 const { resolve } = require('path');
 
 module.exports = {
@@ -170,7 +170,7 @@ Instalamos o *loader* do Babel para o Webpack `babel-loader`, o core do Babel `b
 
 Agora vamos criar na raiz de nosso projeto um arquivo com nome `.babelrc`. Nele vamos adicionar as configurações para o Babel conforme segue:
 
-```jsxon{3,13}
+```json{3,13}
 {
   "presets": [
     ["env", {
@@ -202,7 +202,7 @@ Se quiser saber mais detalhes sobre o `babel-preset-env` veja a [documentação 
 
 Agora voltando para a configuração do Webpack. Podemos incluir no nosso arquivo de configuração uma nova chave chamada `module` com as configurações para o Babel transpilar nossos arquivos `.js`:
 
-```jsx{20-30}
+```jsx{numberLines: true}{20-30}
 const { resolve } = require('path');
 
 module.exports = {
@@ -264,7 +264,7 @@ $ yarn add --dev style-loader css-loader postcss-loader
 
 Vamos adicionar agora em nosso arquivo `webpack.config.js` a regra para processar nosso CSS:
 
-```jsx{29-54}
+```jsx{numberLines: true}{29-54}
 const { resolve } = require('path');
 
 module.exports = {
@@ -353,7 +353,7 @@ Em `options` vamos passar os [plugins do PostCss](https://github.com/postcss/pos
 
 Para informarmos o `autoprefixer` quais os browsers que queremos dar suporte vamos adicionar uma chave de configuração em algum lugar de nosso arquivo `package.json` conforme segue:
 
-```jsxon
+```json
 {
   ...
   "browserslist": [
@@ -415,7 +415,7 @@ Aqui instalamos o Webpack Dev Server e também fizemos a instalação do pacote 
 
 Vamos adicionar agora em nosso arquivo `webpack.config.js` as configurações para o `webpack-dev-server` e `react-hot-loader`:
 
-```jsx{2,6-9,62-64,67-68}
+```jsx{numberLines: true}{2,6-9,62-64,67-68}
 const { resolve } = require('path');
 const webpack = require('webpack');
 
@@ -510,7 +510,7 @@ Por último vamos adicionar alguns *plugins* a partir da linha 66:
 
 Agora vamos adicionar um plugin do Babel para termos o *HMR* funcionando com nosso código React. Em seu arquivo `.babelrc` adicione `"plugins": ["react-hot-loader/babel"]` no final conforme segue:
 
-```jsxon{15}
+```json{15}
 {
   "presets": [
     ["env", {
@@ -531,7 +531,7 @@ Agora vamos adicionar um plugin do Babel para termos o *HMR* funcionando com nos
 
 Pronto, configurações feitas. Precisamos apenas adicionar um *npm script* `"start"` em nosso arquivo `package.json` conforme segue:
 
-```jsxon
+```json
 {
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server"
@@ -555,7 +555,7 @@ Mas ainda não vamos fazer isso, primeiro vamos criar alguns componentes React b
 
 Vamos criar nosso componente de entrada no arquivo `src/index.js` conforme segue:
 
-```jsx{1-2,5,8}
+```jsx{numberLines: true}{1-2,5,8}
 import React from 'react';
 import { render } from 'react-dom';
 
@@ -599,7 +599,7 @@ Se quiser entender a diferença e quando usar cada um deles leia [este artigo](h
 
 Com isso entendido vamos criar nosso componente `App` no arquivo `/src/components/App.js` conforme segue:
 
-```jsx{3-7}
+```jsx{numberLines: true}{3-7}
 import React from 'react';
 
 const App = () => (
@@ -619,7 +619,7 @@ Na linha 9 exportamos este componente como um módulo para poder ser utilizado e
 
 Pode parecer estranho fazer a importação do React na primeira linha e não fazer uso da variável `React` em nenhum lugar do componente, mas lembre que este código JSX é transpilado para JavaScript conforme segue:
 
-```jsx{3,6}
+```jsx{numberLines: true}{3,6}
 import React from 'react';
 
 const App = () => React.createElement(
@@ -681,7 +681,7 @@ export default Message;
 
 Agora vamos em nosso arquivo `App.js` adicionar este novo componente conforme segue:
 
-```jsx{2,7}
+```jsx{numberLines: true}{2,7}
 import React from 'react';
 import Message from './Message';
 
@@ -705,7 +705,7 @@ Como estamos usando o *HMR* nossa página vai ser atualizada com o seguinte:
 
 Se quisermos tornar nosso componente `Message.js` reaproveitável, e que ele cada vez exiba uma mensagem diferente, podemos usar `props` conforme segue:
 
-```jsx{3,5}
+```jsx{numberLines: true}{3,5}
 import React from 'react';
 
 const Message = (props) => (
@@ -723,7 +723,7 @@ Na linha 3 passamos para nossa *arrow function* a variável `props`. Na linha 5 
 
 Para isso temos que atualizar o arquivo `App.js` para ele passar uma propriedade `name` sempre que usarmos o componente `<Message />` conforme segue:
 
-```jsx{7-8}
+```jsx{numberLines: true}{7-8}
 import React from 'react';
 import Message from './Message';
 
@@ -761,7 +761,7 @@ Precisamos primeiro criar um arquivo CSS com o mesmo nome de nosso componente, n
 
 Para aplicar este *style* em nosso componente, fazemos a seguinte mudança no arquivo `Message.js`:
 
-```jsx{2,5}
+```jsx{numberLines: true}{2,5}
 import React from 'react';
 import styles from './Message.css';
 
@@ -808,9 +808,8 @@ Vamos instalar o loader do Webpack `sass-loader` para processar nossos arquivos 
 
 Em seguida vamos adicionar no nosso arquivo `webpack.config.js` mais uma regra dentro de `rules`, vai ser a seguinte:
 
-```jsx{4,12,28}
+```jsx{numberLines: true}{3,11,27}
   // ...
-
   {
     test: /\.scss$/,
     use: [
@@ -846,9 +845,9 @@ Em seguida vamos adicionar no nosso arquivo `webpack.config.js` mais uma regra d
 
 Pode notar que é bem parecida com a que usamos para o CSS, mudamos apenas o seguinte:
 
-- na linha 4 o nosso teste agora passa a ser `test: /\.scss$/,`, queremos testar os arquivo que forem `.scss`
-- na linha 12 iformamos que vamos usar dois loaders antes de usar o `css-loader`, no caso primeiro vamos rodar o `sass-loader`, em seguida o `postcss-loader`
-- por último na linha 28 colocamos o `sass-loader`, que conforme vimos anteriormente, por ser o último da lista, será o primeiro a rodar
+- na linha 3 o nosso teste agora passa a ser `test: /\.scss$/,`, queremos testar os arquivo que forem `.scss`
+- na linha 11 iformamos que vamos usar dois loaders antes de usar o `css-loader`, no caso primeiro vamos rodar o `sass-loader`, em seguida o `postcss-loader`
+- por último na linha 27 colocamos o `sass-loader`, que conforme vimos anteriormente, por ser o último da lista, será o primeiro a rodar
 
 Em seguida podemos criar um arquivo chamado `/src/components/Message.scss` e colocar o seguinte style nele:
 

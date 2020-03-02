@@ -68,7 +68,7 @@ Abra esse arquivo com seu editor de texto e insira nele a estrutura básica em H
 
 Conforme vemos abaixo, na linha 6 adicionamos a abertura e o fechamento da tag `<script></script>`. Dentro desse bloco, entre a abertura e o fechamento da tag, é onde iremos inserir nosso código JavaScript no próximo passo.
 
-```html{6}
+```html{numberLines: true}{6}
 <!DOCTYPE html>
 <html>
   <head>
@@ -90,7 +90,7 @@ Nos próximos artigos vamos entender melhor como é o funcionamento disso, por e
 
 Na linha 7 adicionamos o método `alert`, com a mensagem "Olá mundo!", conforme segue:
 
-```html{7}
+```html{numberLines: true}{7}
 <!DOCTYPE html>
 <html>
   <head>

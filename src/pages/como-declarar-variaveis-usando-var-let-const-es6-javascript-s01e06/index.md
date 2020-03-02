@@ -36,7 +36,7 @@ var myVar = 42;
 
 Quando usamos `var` é possível declarar ou atribuir novamente nossa variável:
 
-```jsx{1,4,7}
+```jsx{numberLines: true}{1,4,7}
 var height = 300;
 console.log(height);  // 300
 
@@ -65,7 +65,7 @@ Em muitas linguagens, blocos de código como `if` e `for` criam um novo escopo, 
 
 Vamos ver um exemplo onde precisamos inverter o valor de duas variáveis, caso o primeiro valor seja maior que o segundo:
 
-```jsx{3,7,10}
+```jsx{numberLines: true}{3,7,10}
 function invertValues(x, y) {
   if (x > y) {
     var temp = x;
@@ -82,7 +82,7 @@ O que acontece aqui é que a variável `temp`, declarada na linha 3, vai pertenc
 
 Outro exemplo é ao usar o `for` para um contador:
 
-```jsx{2,5}
+```jsx{numberLines: true}{2,5}
 function count(x) {
   for (var i = 0; i < x; i++) {
     console.log(i);
@@ -103,7 +103,7 @@ Através da *keyword* `let` podemos fazer a declaração de variáveis respeitar
 
 Agora os dois exemplos anteriores usando `let`:
 
-```jsx{3,7,12,15}
+```jsx{numberLines: true}{3,7,12,15}
 function invertValues(x, y) {
   if (x > y) {
     let temp = x;
@@ -131,7 +131,7 @@ Sempre que apropriado o melhor é usarmos sim `const` e `let`, mas é importante
 
 No exemplo que segue, faria alguma diferença usarmos `let` para a variável `z`?
 
-```jsx{2}
+```jsx{numberLines: true}{2}
 function foo(x, y) {
   let z = x * 2;
 
@@ -161,7 +161,7 @@ function foo(x, y) {
 
 Uma das formas de tentarmos resolver erros é usar `try` e `catch`. Vamos supor que o exemplo acima gere um erro e eu faça uma alteração conforme segue para tratar ele:
 
-```jsx{3}
+```jsx{numberLines: true}{3}
 function foo(x, y) {
   try {
     let z = bar(x * 2);
@@ -177,7 +177,7 @@ Talvez vocês já tenham percebido o problema, a variável `z` passa a pertencer
 
 Neste caso poderíamos mudar para usar `var`:
 
-```jsx{3}
+```jsx{numberLines: true}{3}
 function foo(x, y) {
   try {
     var z = bar(x * 2);
@@ -191,7 +191,7 @@ function foo(x, y) {
 
 Claro que alguns podem argumentar que o problema é que a declaração deveria estar separada da associação do valor na variável conforme segue:
 
-```jsx{2,5}
+```jsx{numberLines: true}{2,5}
 function foo(x, y) {
   let z;
 
@@ -240,7 +240,7 @@ Não podemos atribuir novamente o valor da variável conforme vemos nas linhas 2
 
 O mesmo ocorre com objetos:
 
-```jsx{5,9}
+```jsx{numberLines: true}{5,9}
 const person = {
   firstName: 'Marcelo',
   lastName: 'Dapper'

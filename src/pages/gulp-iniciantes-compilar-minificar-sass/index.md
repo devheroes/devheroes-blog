@@ -60,7 +60,7 @@ O que aparece dentro de parênteses são sugestões do próprio NPM como respost
 
 O arquivo `package.json` criado terá o seguinte conteúdo:
 
-```jsxon
+```json
 {
   "name": "gulp-intro",
   "version": "1.0.0",
@@ -89,7 +89,7 @@ Vai perceber também que foram instaladas muitas outras coisas junto do Gulp, is
 
 Se abrir o arquivo `package.json` vai ver o *Gulp* listado como `devDependencies`, conforme segue na linha 12:
 
-```jsxon{12}
+```json{numberLines: true}{12}
 {
   "name": "gulp-intro",
   "version": "1.0.0",
@@ -116,7 +116,7 @@ Para este artigo criei meu arquivo `.gitignore` com o seguinte conteúdo:
 node_modules
 ```
 
-### Criar o arquivo de configuração 'gulpfile.js'
+### Criar o arquivo de configuração `gulpfile.js`
 
 Todas as configurações do *Gulp* são guardadas dentro de um arquivo chamado `gulpfile.js`. Por isso vamos criar agora este arquivo na raiz de nosso projeto.
 
@@ -305,7 +305,7 @@ gulp.task('sassprod', function() {
 
 Dessa maneira nosso arquivo para a produção passa a ter um nome diferente do arquivo gerado para desenvolvimento. É muito comum a versão minificada receber no nome do arquivo o complemento `.min` conforme usamos aqui.
 
-## Criar a tarefa 'watch'
+## Criar a tarefa `watch`
 
 Da forma que temos agora, precisamos toda vez que houver uma mudança em nosso *Sass* rodar o comando do *Gulp* para compilar.
 
@@ -329,7 +329,7 @@ Precisamos passar dois parâmetros:
 
 Caso queira ganhar tempo, especialmente se seu projeto estiver demorando muito para compilar, pode optar por disparar apenas uma das tarefas.
 
-## Criar a tarefa 'default'
+## Criar a tarefa `default`
 
 Agora que definimos todas as tarefas de nosso projeto podemos ajustar nossa tarefa default, ela roda ao darmos apenas o comando `gulp`.
 

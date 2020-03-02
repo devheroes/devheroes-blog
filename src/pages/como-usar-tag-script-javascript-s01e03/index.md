@@ -19,7 +19,7 @@ Existem duas formas para inserirmos código JavaScript em nossa página, *inline
 
 Para inserirmos o código *inline* basta colocarmos nosso código JavaScript dentro da tag `<script></script>` diretamente na página HTML, assim como fizemos no exemplo do [post anterior](https://devheroes.io/ambiente-de-desenvolvimento-javascript-s01e02/) que segue:
 
-```html{6}
+```html{numberLines: true}{6}
 <!DOCTYPE html>
 <html>
   <head>
@@ -46,7 +46,7 @@ Para isso precisamos criar um novo arquivo apenas com nosso código. É uma conv
 
 Abaixo temos o primeiro exemplo do post de hoje. Na linha 6 vemos como carregar um script externo:
 
-```html{7}
+```html{numberLines: true}{7}
 <!DOCTYPE html>
 <html>
   <head>
@@ -97,7 +97,7 @@ Muitas vezes vão ver o script externo ser carregado com o atributo `type` preen
 
 Um detalhe importante, quando você carregar um arquivo externo você não pode colocar junto dele código *inline* como no exemplo abaixo na linha 8:
 
-```html{7-8}
+```html{numberLines: true}{7-8}
 <!DOCTYPE html>
 <html>
   <head>
@@ -152,7 +152,7 @@ Todo mundo já passou por isso, abrir uma página, especialmente no celular, e o
 
 Por isso muitas vezes vamos encontrar a recomendação de carregar o JavaScript no final do arquivo HTML, antes do fechamento da tag `<body>`. Abaixo, no segundo exemplo deste post, vemos como fazer isso:
 
-```html{16}
+```html{numberLines: true}{16}
 <!DOCTYPE html>
 <html>
   <head>
