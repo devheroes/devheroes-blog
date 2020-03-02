@@ -1,5 +1,5 @@
 body {
-  --purple: #9575CD;
+  --purple: #9575cd;
   background-color: var(--bg);
 }
 
@@ -9,7 +9,7 @@ body.light {
   --header: var(--purple);
   --textNormal: #222;
   --textTitle: #222;
-  --textLink: #7E57C2;
+  --textLink: #7e57c2;
   --hr: hsla(0, 0%, 0%, 0.2);
   --inlineCode-bg: rgba(255, 229, 100, 0.2);
   --inlineCode-text: #1a1a1a;
@@ -246,4 +246,8 @@ pre[data-line] {
 .gatsby-highlight pre[class*='language-'] {
   float: left;
   min-width: 100%;
+}
+
+.line-numbers .line-numbers-rows {
+  padding: 1.3125rem 0;
 }

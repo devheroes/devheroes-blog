@@ -55,8 +55,7 @@
     "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
     "develop": "gatsby develop",
     "start": "yarn develop",
-    "build": "rm -rf public && rm -rf .cache && gatsby build",
-    "js-to-jsx": "node src/utils/js-to-jsx"
+    "build": "rm -rf public && rm -rf .cache && gatsby build"
   },
   "husky": {
     "hooks": {
@@ -65,12 +64,7 @@
   },
   "lint-staged": {
     "{gatsby-*.js,src/**/*.{js,jsx,json,css}}": [
-      "yarn format",
-      "git add"
-    ],
-    "src/pages/**/*.md": [
-      "yarn run js-to-jsx",
-      "git add"
+      "yarn format"
     ]
   },
   "resolutions": {
