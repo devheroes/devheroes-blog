@@ -6,6 +6,7 @@ import Helmet from 'react-helmet';
 import { rhythm, scale } from '../utils/typography';
 import sun from '../assets/sun.png';
 import moon from '../assets/moon.png';
+import Logo from '../assets/logo.svg';
 
 class Layout extends React.Component {
   state = {
@@ -25,13 +26,7 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       return (
-        <h1
-          style={{
-            ...scale(0.75),
-            marginBottom: 0,
-            marginTop: 0,
-          }}
-        >
+        <>
           <Link
             style={{
               boxShadow: 'none',
@@ -40,32 +35,42 @@ class Layout extends React.Component {
             }}
             to={'/'}
           >
-            {title}
+            <Logo style={{ height: '72px', display: 'block' }} />
           </Link>
-        </h1>
+
+          <h1
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+            }}
+          >
+            {title}
+          </h1>
+        </>
       );
     } else {
       return (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
-            marginBottom: 0,
-            height: 42, // because
-            lineHeight: '2.625rem',
-          }}
-        >
+        <>
           <Link
             style={{
               boxShadow: 'none',
               textDecoration: 'none',
-              color: '#9575CD',
+              color: 'var(--textTitle)',
             }}
             to={'/'}
           >
-            {title}
+            <Logo style={{ height: '56px', display: 'block' }} />
           </Link>
-        </h3>
+
+          <h3
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+            }}
+          >
+            {title}
+          </h3>
+        </>
       );
     }
   }
