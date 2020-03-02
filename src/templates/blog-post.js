@@ -17,6 +17,8 @@ import {
   replaceAnchorLinksByLanguage,
 } from '../utils/i18n';
 
+import { authors } from '../utils/authors';
+
 const GITHUB_USERNAME = 'devheroes';
 const GITHUB_REPO_NAME = 'devheroes-blog';
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -135,7 +137,8 @@ class BlogPostTemplate extends React.Component {
                   marginTop: rhythm(-4 / 5),
                 }}
               >
-                {formatPostDate(post.frontmatter.date, lang)}
+                {authors[post.frontmatter.author].name}
+                {` • ${formatPostDate(post.frontmatter.date, lang)}`}
                 {` • ${formatReadingTime(post.timeToRead)}`}
               </p>
               {translations.length > 0 && (
