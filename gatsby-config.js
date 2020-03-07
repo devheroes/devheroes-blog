@@ -4,7 +4,7 @@ module.exports = {
     subTitle: 'Torne-se um herói do desenvolvimento',
     author: 'Marcelo Dapper',
     description: 'Torne-se um herói do desenvolvimento',
-    siteUrl: 'https://devheroes.netlify.com',
+    siteUrl: 'https://devheroes.netlify.com/',
     social: {
       twitter: '@devheroes_io',
     },
@@ -86,7 +86,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted on the blog devheroes.io. You can read it online by <a href="${siteUrl}/${edge.node.fields.slug}">clicking here</a>.)</div>
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted on the blog devheroes.io. You can read it online by <a href="${siteUrl}${edge.node.fields.slug}">clicking here</a>.)</div>
                 `;
 
                 let html = edge.node.html;
@@ -99,8 +99,8 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.spoiler,
                   date: edge.node.frontmatter.date,
-                  url: `${siteUrl}/${edge.node.fields.slug}`,
-                  guid: `${siteUrl}/${edge.node.fields.slug}`,
+                  url: `${siteUrl}${edge.node.fields.slug}`,
+                  guid: `${siteUrl}${edge.node.fields.slug}`,
                   custom_elements: [{ 'content:encoded': html + postText }],
                 });
               });
