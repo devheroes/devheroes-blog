@@ -3,6 +3,7 @@ title: 'Tipos de Valores - JavaScript (S01E05)'
 date: '2017-02-16'
 author: mdapper
 spoiler: Neste artigo vamos considerar sobre os tipos de valores na linguagem JavaScript, como por exemplo number, string, boolean, object, null, undefined, array, etc.
+image: tipos-de-valores-javascript-s01e05-768x403.jpg
 cta: javascript
 ---
 

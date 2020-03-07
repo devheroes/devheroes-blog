@@ -3,6 +3,7 @@ title: 'Conceitos básicos da ECMAScript - JavaScript (S01E04)'
 date: '2016-12-09'
 author: mdapper
 spoiler: Neste post vamos ver alguns conceitos básicos da ECMAScript, como identificadores, comentários, declarações, expressões, execução, palavras chave e reservadas.
+image: conceitos-basicos-da-ecmascript-s01e04-v1.1-768x403.jpg
 cta: ecmascript
 ---
 

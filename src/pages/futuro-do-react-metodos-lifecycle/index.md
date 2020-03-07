@@ -3,6 +3,7 @@ title: 'Futuro do React e os métodos de lifecycle'
 date: '2018-04-02'
 author: mdapper
 spoiler: Por mais de um ano o time do React tem trabalhado para implementar renderização assíncrona (async rendering). No mês de fevereiro, durante uma palestra na JSConf Islândia, Dan Abramov mostrou o futuro do React e algumas das possibilidades que async rendering vai trazer.
+image: futuro-do-react-metodos-lifecycle-768x403.jpg
 cta: react
 ---
 

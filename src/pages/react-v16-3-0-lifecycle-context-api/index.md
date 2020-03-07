@@ -3,6 +3,7 @@ title: 'React v16.3.0: Novos métodos de lifecycle e context API'
 date: '2018-06-07'
 author: mdapper
 spoiler: No post anterior vimos sobre as futuras mudanças em alguns métodos de lifecycle. Na versão 16.3.0 estão sendo adicionados alguns métodos de lifecycle para ajudar com a migração. Também estão sendo introduzidas novas APIs para alguns recursos muito solicitados, uma API oficial para context, uma API para encaminhar refs, e uma API ref mais amigável.
+image: react-v16-3-0-lifecycle-context-api-768x403.jpg
 cta: react
 ---
 

@@ -3,6 +3,7 @@ title: 'Como usar a tag script - JavaScript (S01E03)'
 date: '2016-11-30'
 author: mdapper
 spoiler: Neste post vamos ver como usar a tag script, inline ou arquivo externo, onde posicionar ela e quais são seus principais atributos.
+image: JavaScript-S01E03-como-usar-a-tag-script.jpg
 cta: scripts
 ---
 
