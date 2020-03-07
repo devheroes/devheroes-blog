@@ -4,7 +4,6 @@ date: '2017-05-25'
 author: mdapper
 spoiler: Neste artigo vamos entender a diferença entre `var`, `let` e `const`, e quando devemos usar cada um deles para declarar variáveis em JavaScript.
 image: javascript-s01e06-variaveis-new-768x403.jpg
-cta: javascript
 ---
 
 Neste artigo vamos entender a diferença entre `var`, `let` e `const`, e quando devemos usar cada um deles para declarar variáveis em JavaScript.

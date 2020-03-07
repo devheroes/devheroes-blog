@@ -4,7 +4,6 @@ date: '2016-11-29'
 author: mdapper
 spoiler: Neste post vamos ver como configurar um ambiente de desenvolvimento para podermos programar em JavaScript.
 image: JavaScript-S01E02-ambiente-de-desenvolvimento-768x403.png
-cta: environment
 ---
 
 Neste post vamos ver como configurar um ambiente de desenvolvimento para podermos programar em JavaScript.

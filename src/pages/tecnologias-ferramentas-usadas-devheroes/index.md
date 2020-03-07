@@ -4,7 +4,6 @@ date: '2016-10-12'
 author: mdapper
 spoiler: Seguem algumas das tecnologias e ferramentas usadas no desenvolvimento do DevHeroes. Para quem, assim como eu, gosta de saber esses detalhes.
 image: tools_destaque.jpg
-cta: tecnologias
 ---
 
 Seguem algumas das tecnologias e ferramentas usadas no desenvolvimento do DevHeroes. Para quem, assim como eu, gosta de saber esses detalhes.

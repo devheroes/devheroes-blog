@@ -4,7 +4,6 @@ date: '2016-09-28'
 author: mdapper
 spoiler: Welcome to DevHeroes!
 image: artigos-destaque.png
-cta: devheroes
 ---
 
 Follow our journey to become development heroes. We will share here how this process is going. I believe that helping others is a very important way to grow as a developer, it strengthens what we already know and is beneficial for the whole community.

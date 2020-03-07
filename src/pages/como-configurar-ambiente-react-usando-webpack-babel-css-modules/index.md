@@ -4,7 +4,6 @@ date: '2017-02-06'
 author: mdapper
 spoiler: Neste post vamos ver como montar um ambiente moderno para desenvolvimento em React usando Webpack 2, Babel e CSS Modules, com ou sem Sass.
 image: ambiente-react-com-webpack-babel-css-modules-768x403.jpg
-cta: react
 ---
 
 Neste post vamos ver como montar um ambiente moderno para desenvolvimento em React usando Webpack 2, Babel e CSS Modules, com ou sem Sass.

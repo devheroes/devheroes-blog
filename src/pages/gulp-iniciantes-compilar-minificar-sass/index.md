@@ -4,7 +4,6 @@ date: '2017-01-04'
 author: mdapper
 spoiler: Neste artigo vamos ver como instalar e usar o Gulp para automatizar algumas tarefas básicas como compilar e minificar o Sass.
 image: gulp-iniciantes-compilar-minificar-sass-768x403.jpg
-cta: gulp
 ---
 
 Neste artigo vamos ver como instalar e usar o *Gulp* para automatizar algumas tarefas básicas como compilar e minificar o *Sass*.

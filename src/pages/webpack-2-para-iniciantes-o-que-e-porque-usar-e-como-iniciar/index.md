@@ -4,7 +4,6 @@ date: '2017-01-30'
 author: fxcosta
 spoiler: Desenvolver e configurar o ambiente para o desenvolvimento web moderno pode ser um problema, principalmente se você está iniciando e tem medo de todas essas siglas que invadiram o mundo do JavaScript.
 image: webpack-para-iniciantes-768x403.jpg
-cta: webpack
 ---
 
 Desenvolver e configurar o ambiente para o desenvolvimento web moderno pode ser um problema, principalmente se você está iniciando e tem medo de todas essas siglas que invadiram o mundo do JavaScript.

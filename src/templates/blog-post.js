@@ -173,7 +173,7 @@ class BlogPostTemplate extends React.Component {
                 fontFamily: systemFont,
               }}
             >
-              <Signup cta={post.frontmatter.cta} />
+              <Signup />
             </div>
           )}
           <h3
@@ -252,7 +252,6 @@ export const pageQuery = graphql`
         image {
           publicURL
         }
-        cta
       }
       fields {
         slug

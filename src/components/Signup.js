@@ -2,33 +2,17 @@ import React from 'react';
 
 import './Signup.css';
 
-const REACT_COMPONENTS_FORM_ID = '1181861';
 const DEVHEROES_FORM_ID = '812047';
 
 class Signup extends React.Component {
   render() {
-    let form,
-      { cta } = this.props;
-    switch (cta) {
-      case 'react':
-        form = {
-          id: REACT_COMPONENTS_FORM_ID,
-          title: 'Learn to Build Resilient React Components',
-          subTitle:
-            'Get a one week email course and learn how I think about writing React components based on 4 Principles.',
-          buttonText: 'Start Learning',
-        };
-        break;
-      default:
-        form = {
-          id: DEVHEROES_FORM_ID,
-          title: 'Assine o Newsletter',
-          subTitle:
-            'Assine para receber nosso conteúdo mais recente por email.',
+    const form = {
+      id: DEVHEROES_FORM_ID,
+      title: 'Assine o Newsletter',
+      subTitle: 'Assine para receber nosso conteúdo mais recente por email.',
+      buttonText: 'Assinar',
+    };
 
-          buttonText: 'Assinar',
-        };
-    }
     return (
       <form
         action={`https://app.convertkit.com/forms/${form.id}/subscriptions`}

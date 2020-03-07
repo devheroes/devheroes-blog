@@ -4,7 +4,6 @@ date: '2016-11-25'
 author: mdapper
 spoiler: O post anterior foi apenas para dar inicio a série. Agora vamos conhecer um pouco sobre a história do JavaScript.
 image: JavaScript-S01E01-Historia-do-JavaScript-768x403.png
-cta: history
 ---
 
 O post anterior foi apenas para dar inicio a série. Agora vamos conhecer um pouco sobre a história do JavaScript.

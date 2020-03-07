@@ -4,7 +4,6 @@ date: '2016-09-28'
 author: mdapper
 spoiler: Sejam bem vindos ao DevHeroes!
 image: artigos-destaque.png
-cta: devheroes
 ---
 
 Sejam bem vindos ao DevHeroes!
