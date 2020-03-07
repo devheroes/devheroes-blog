@@ -121,6 +121,7 @@ class BlogPostTemplate extends React.Component {
           lang={lang}
           title={post.frontmatter.title}
           description={post.frontmatter.spoiler}
+          image={post.frontmatter.image.publicURL}
           slug={post.fields.slug}
         />
         <main>
@@ -248,6 +249,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         author
         spoiler
+        image {
+          publicURL
+        }
         cta
       }
       fields {

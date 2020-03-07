@@ -3,8 +3,11 @@ title: 'console.log("Hello World from DevHeroes!");'
 date: '2016-09-28'
 author: mdapper
 spoiler: Sejam bem vindos ao DevHeroes!
+image: artigos-destaque.png
 cta: devheroes
 ---
+
+Sejam bem vindos ao DevHeroes!
 
 Acompanhe nossa jornada em nos tornar heróis do desenvolvimento. Vamos compartilhar aqui como está sendo esse processo. Acredito que ajudar outros é uma etapa muito importante para crescer como um desenvolvedor, fortalece o que já sabemos e é benéfico para toda a comunidade.
 
