@@ -166,16 +166,15 @@ class BlogPostTemplate extends React.Component {
           </article>
         </main>
         <aside>
-          {false && (
-            <div
-              style={{
-                margin: '90px 0 40px 0',
-                fontFamily: systemFont,
-              }}
-            >
-              <Signup />
-            </div>
-          )}
+          <div
+            style={{
+              margin: '90px 0 40px 0',
+              fontFamily: systemFont,
+            }}
+          >
+            <Signup />
+          </div>
+
           <h3
             style={{
               fontFamily: 'Montserrat, sans-serif',
