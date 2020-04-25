@@ -1,11 +1,14 @@
 body {
   --purple: #9575cd;
+  --white: #ffffff;
+  --secondary: #263238;
   background-color: var(--bg);
 }
 
 body.light {
-  --bg: #ffffff;
+  --bg: var(--white);
   --bg-secondary: rgb(249, 250, 251);
+  --bg-inverted: var(--secondary);
   --header: var(--purple);
   --textNormal: #222;
   --textTitle: #222;
@@ -19,8 +22,9 @@ body.light {
 body.dark {
   -webkit-font-smoothing: antialiased;
 
-  --bg: #282c35;
+  --bg: var(--secondary);
   --bg-secondary: rgb(54, 60, 72);
+  --bg-inverted: var(--white);
   --header: #ffffff;
   --textNormal: rgba(255, 255, 255, 0.88);
   --textTitle: #ffffff;
