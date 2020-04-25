@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link, graphql } from 'gatsby';
 import get from 'lodash/get';
 
@@ -31,7 +31,7 @@ class Translations extends React.Component {
 
     return (
       <div className="translations">
-        <Panel style={{ fontFamily: systemFont }}>
+        <Panel fontFamily={systemFont}>
           {translations.length > 0 && (
             <span>
               <span>Translated by readers into: </span>
@@ -48,17 +48,17 @@ class Translations extends React.Component {
             </span>
           )}
           {lang !== 'pt-br' && (
-            <>
+            <Fragment>
               <br />
               <br />
-              <Link to={languageLink('pt-br')}>Leia o original</Link>
+              <Link to={languageLink('pt-br')}>Read the original</Link>
               {' • '}
               <a href={editUrl} target="_blank" rel="noopener noreferrer">
-                Melhore essa tradução
+                Improve this translation
               </a>
               {' • '}
-              <Link to={`/${lang}`}>Veja todos os posts traduzidos</Link>{' '}
-            </>
+              <Link to={`/${lang}`}>See all translated posts</Link>{' '}
+            </Fragment>
           )}
         </Panel>
       </div>
