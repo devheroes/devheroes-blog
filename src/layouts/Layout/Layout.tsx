@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 import Toggle from '../../components/Toggle';
 import Helmet from 'react-helmet';
 
-import sun from '../assets/sun.png';
-import moon from '../assets/moon.png';
-import Logo from '../assets/logo.svg';
+import sun from '../../assets/sun.png';
+import moon from '../../assets/moon.png';
+import Logo from '../../assets/logo.svg';
 
 type Props = {
   location: {
