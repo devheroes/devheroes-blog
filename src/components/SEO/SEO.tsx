@@ -1,7 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+
+type Props = {
+  description?: string;
+  image?: string;
+  meta?: [];
+  slug?: string;
+  title: string;
+  lang?: string;
+};
 
 const query = graphql`
   query GetSiteMetadata {
@@ -20,7 +28,14 @@ const query = graphql`
   }
 `;
 
-function SEO({ meta, image, title, description, slug, lang = 'pt-br' }) {
+export default function SEO({
+  meta = [],
+  image,
+  title = '',
+  description,
+  slug = '',
+  lang = 'pt-br',
+}: Props) {
   return (
     <StaticQuery
       query={query}
@@ -95,19 +110,3 @@ function SEO({ meta, image, title, description, slug, lang = 'pt-br' }) {
     />
   );
 }
-
-SEO.defaultProps = {
-  meta: [],
-  title: '',
-  slug: '',
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  image: PropTypes.string,
-  meta: PropTypes.array,
-  slug: PropTypes.string,
-  title: PropTypes.string.isRequired,
-};
-
-export default SEO;
