@@ -1,7 +1,16 @@
 import mdapper from '../assets/authors/mdapper.jpg';
 import fxcosta from '../assets/authors/fxcosta.jpg';
 
-export const authors = {
+type Authors = {
+  [key: string]: {
+    profilePic: any;
+    name: string;
+    url: string;
+    bio: string;
+  };
+};
+
+export const authors: Authors = {
   mdapper: {
     profilePic: mdapper,
     name: 'Marcelo Dapper',

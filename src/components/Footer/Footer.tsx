@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Github from './icons/Github';
-import Twitter from './icons/Twitter';
-import YouTube from './icons/YouTube';
-import { rhythm } from '../utils/typography';
+import Github from '../icons/Github';
+import Twitter from '../icons/Twitter';
+import YouTube from '../icons/YouTube';
+import { rhythm } from '../../utils/typography';
 
 export default function Footer() {
   const date = new Date();

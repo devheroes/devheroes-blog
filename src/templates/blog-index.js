@@ -2,7 +2,7 @@ import { Link, graphql } from 'gatsby';
 import { formatPostDate, formatReadingTime } from '../utils/helpers';
 
 import Footer from '../components/Footer';
-import Layout from '../components/Layout';
+import Layout from '../layouts/Layout';
 import Panel from '../components/Panel';
 import React from 'react';
 import SEO from '../components/SEO';

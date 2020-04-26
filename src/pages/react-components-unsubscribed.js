@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Layout from '../layouts/Layout';
 import get from 'lodash/get';
 
 class ReactComponentsUnsubscribed extends React.Component {

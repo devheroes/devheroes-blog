@@ -4,7 +4,7 @@ import get from 'lodash/get';
 
 import '../fonts/fonts-post.css';
 import Bio from '../components/Bio';
-import Layout from '../components/Layout';
+import Layout from '../layouts/Layout';
 import SEO from '../components/SEO';
 import Signup from '../components/Signup';
 import Panel from '../components/Panel';

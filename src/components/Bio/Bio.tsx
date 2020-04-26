@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { rhythm } from '../utils/typography';
-import { authors } from '../utils/authors';
+import { rhythm } from '../../utils/typography';
+import { authors } from '../../utils/authors';
 
 type Props = {
   author: string;
