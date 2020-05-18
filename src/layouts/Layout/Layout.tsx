@@ -11,7 +11,7 @@ type Props = {
   location: {
     pathname: string;
   };
-  title: string;
+  title?: string;
 };
 
 type State = {
