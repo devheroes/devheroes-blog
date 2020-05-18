@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 type Props = {
   children: ReactNode;
-  fontFamily: string;
+  fontFamily?: string;
 };
 
 export default function Panel({ children, fontFamily }: Props) {

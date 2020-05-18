@@ -7,8 +7,8 @@ type Props = {
   image?: string;
   meta?: [];
   slug?: string;
-  title: string;
-  lang?: string;
+  title?: string;
+  langKey?: string;
 };
 
 const query = graphql`
@@ -34,7 +34,7 @@ export default function SEO({
   title = '',
   description,
   slug = '',
-  lang = 'pt-br',
+  langKey = 'pt-br',
 }: Props) {
   return (
     <StaticQuery
@@ -46,7 +46,7 @@ export default function SEO({
         const url = `${siteMetadata.siteUrl}${slug}`;
         return (
           <Helmet
-            htmlAttributes={{ lang }}
+            htmlAttributes={{ langKey }}
             {...(title
               ? {
                   titleTemplate: `%s — ${siteMetadata.title}`,
