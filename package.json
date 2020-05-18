@@ -63,6 +63,7 @@
     "gatsby:develop": "gatsby develop --open",
     "gatsby:clean": "gatsby clean",
     "start": "yarn gatsby:develop",
+    "start:clean": "yarn gatsby:clean && yarn start",
     "build": "rm -rf public && rm -rf .cache && gatsby build"
   },
   "husky": {
