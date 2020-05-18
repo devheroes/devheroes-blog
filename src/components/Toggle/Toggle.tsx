@@ -62,7 +62,7 @@ export default class Toggle extends PureComponent<Props, State> {
   touchMoved: any;
   touchStarted: any;
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if ('checked' in nextProps) {
       this.setState({ checked: !!nextProps.checked });
       this.previouslyChecked = !!nextProps.checked;
