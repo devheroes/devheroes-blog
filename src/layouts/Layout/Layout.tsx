@@ -1,14 +1,24 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Toggle from './Toggle';
+import Toggle from '../../components/Toggle';
 import Helmet from 'react-helmet';
 
-import { rhythm, scale } from '../utils/typography';
-import sun from '../assets/sun.png';
-import moon from '../assets/moon.png';
-import Logo from '../assets/logo.svg';
+import sun from '../../assets/sun.png';
+import moon from '../../assets/moon.png';
+import Logo from '../../assets/logo.svg';
 
-class Layout extends React.Component {
+type Props = {
+  location: {
+    pathname: string;
+  };
+  title?: string;
+};
+
+type State = {
+  theme: string | null;
+};
+
+class Layout extends React.Component<Props, State> {
   state = {
     theme: null,
   };
@@ -22,7 +32,7 @@ class Layout extends React.Component {
 
   renderHeader() {
     const { location, title } = this.props;
-    const rootPath = `${__PATH_PREFIX__}/`;
+    const rootPath = '/';
 
     if (location.pathname === rootPath) {
       return (
@@ -33,7 +43,7 @@ class Layout extends React.Component {
               textDecoration: 'none',
               color: 'var(--textTitle)',
             }}
-            to={'/'}
+            to="/"
           >
             <Logo style={{ height: '72px', display: 'block' }} />
           </Link>
@@ -99,8 +109,8 @@ class Layout extends React.Component {
           style={{
             marginLeft: 'auto',
             marginRight: 'auto',
-            maxWidth: rhythm(24),
-            padding: `2.625rem ${rhythm(3 / 4)}`,
+            maxWidth: '788px',
+            padding: `2.625rem 24px`,
           }}
         >
           <header
@@ -135,7 +145,7 @@ class Layout extends React.Component {
                   ),
                 }}
                 checked={this.state.theme === 'dark'}
-                onChange={e =>
+                onChange={(e: any) =>
                   window.__setPreferredTheme(
                     e.target.checked ? 'dark' : 'light'
                   )

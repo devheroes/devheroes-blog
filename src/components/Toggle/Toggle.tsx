@@ -6,12 +6,12 @@
 
 import './Toggle.css';
 
-import React, { PureComponent } from 'react';
+import React, { PureComponent, ReactNode } from 'react';
 
 // Copyright 2015-present Drifty Co.
 // http://drifty.com/
 // from: https://github.com/driftyco/ionic/blob/master/src/util/dom.ts
-function pointerCoord(event) {
+function pointerCoord(event: any) {
   // get coordinates for either a mouse click
   // or a touch depending on the given event
   if (event) {
@@ -28,31 +28,48 @@ function pointerCoord(event) {
   return { x: 0, y: 0 };
 }
 
-export default class Toggle extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleTouchStart = this.handleTouchStart.bind(this);
-    this.handleTouchMove = this.handleTouchMove.bind(this);
-    this.handleTouchEnd = this.handleTouchEnd.bind(this);
-    this.handleTouchCancel = this.handleTouchCancel.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
-    this.previouslyChecked = !!(props.checked || props.defaultChecked);
-    this.state = {
-      checked: !!(props.checked || props.defaultChecked),
-      hasFocus: false,
-    };
-  }
+type Props = {
+  checked: boolean;
+  className?: string;
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  icons: {
+    checked: ReactNode;
+    unchecked: ReactNode;
+  };
+  onBlur?: (event: any) => void;
+  onChange: (event: any) => void;
+  onFocus?: (event: any) => void;
+};
 
-  componentWillReceiveProps(nextProps) {
+type State = {
+  checked: boolean;
+  hasFocus: boolean;
+};
+
+export default class Toggle extends PureComponent<Props, State> {
+  state = {
+    checked: !!(this.props.checked || this.props.defaultChecked),
+    hasFocus: false,
+  };
+
+  previouslyChecked = !!(this.props.checked || this.props.defaultChecked);
+
+  hadFocusAtTouchStart: any;
+  input: any;
+  moved: any;
+  startX: any;
+  touchMoved: any;
+  touchStarted: any;
+
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if ('checked' in nextProps) {
       this.setState({ checked: !!nextProps.checked });
       this.previouslyChecked = !!nextProps.checked;
     }
   }
 
-  handleClick(event) {
+  handleClick = (event: any) => {
     const checkbox = this.input;
     this.previouslyChecked = checkbox.checked;
     if (event.target !== checkbox && !this.moved) {
@@ -63,16 +80,16 @@ export default class Toggle extends PureComponent {
     }
 
     this.setState({ checked: checkbox.checked });
-  }
+  };
 
-  handleTouchStart(event) {
+  handleTouchStart = (event: any) => {
     this.startX = pointerCoord(event).x;
     this.touchStarted = true;
     this.hadFocusAtTouchStart = this.state.hasFocus;
     this.setState({ hasFocus: true });
-  }
+  };
 
-  handleTouchMove(event) {
+  handleTouchMove = (event: any) => {
     if (!this.touchStarted) return;
     this.touchMoved = true;
 
@@ -86,9 +103,9 @@ export default class Toggle extends PureComponent {
         this.startX = currentX;
       }
     }
-  }
+  };
 
-  handleTouchEnd(event) {
+  handleTouchEnd = (event: any) => {
     if (!this.touchMoved) return;
     const checkbox = this.input;
     event.preventDefault();
@@ -106,9 +123,9 @@ export default class Toggle extends PureComponent {
     if (!this.hadFocusAtTouchStart) {
       this.setState({ hasFocus: false });
     }
-  }
+  };
 
-  handleTouchCancel(event) {
+  handleTouchCancel = (_event: any) => {
     if (this.startX != null) {
       this.touchStarted = false;
       this.startX = null;
@@ -118,9 +135,9 @@ export default class Toggle extends PureComponent {
     if (!this.hadFocusAtTouchStart) {
       this.setState({ hasFocus: false });
     }
-  }
+  };
 
-  handleFocus(event) {
+  handleFocus = (event: any) => {
     const { onFocus } = this.props;
 
     if (onFocus) {
@@ -129,9 +146,9 @@ export default class Toggle extends PureComponent {
 
     this.hadFocusAtTouchStart = true;
     this.setState({ hasFocus: true });
-  }
+  };
 
-  handleBlur(event) {
+  handleBlur = (event: any) => {
     const { onBlur } = this.props;
 
     if (onBlur) {
@@ -140,16 +157,14 @@ export default class Toggle extends PureComponent {
 
     this.hadFocusAtTouchStart = false;
     this.setState({ hasFocus: false });
-  }
+  };
 
-  getIcon(type) {
+  getIcon(type: 'checked' | 'unchecked') {
     const { icons } = this.props;
     if (!icons) {
       return null;
     }
-    return icons[type] === undefined
-      ? Toggle.defaultProps.icons[type]
-      : icons[type];
+    return icons[type] === undefined ? icons['unchecked'] : icons[type];
   }
 
   render() {

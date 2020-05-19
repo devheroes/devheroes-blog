@@ -30,13 +30,13 @@ exports.createPages = ({ graphql, actions }) => {
   });
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js');
+    const blogPost = path.resolve('./src/templates/blog-post.tsx');
 
     // Create index pages for all supported languages
     Object.keys(supportedLanguages).forEach(langKey => {
       createPage({
         path: langKey === 'pt-br' ? '/' : `/${langKey}/`,
-        component: path.resolve('./src/templates/blog-index.js'),
+        component: path.resolve('./src/templates/blog-index.tsx'),
         context: {
           langKey,
         },

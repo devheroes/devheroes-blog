@@ -1,4 +1,4 @@
-export function formatReadingTime(minutes) {
+export function formatReadingTime(minutes: number) {
   let cups = Math.round(minutes / 5);
   if (cups > 5) {
     return `${new Array(Math.round(cups / Math.E))
@@ -12,15 +12,15 @@ export function formatReadingTime(minutes) {
 }
 
 // `lang` is optional and will default to the current user agent locale
-export function formatPostDate(date, lang) {
+export function formatPostDate(date: string, lang: string) {
   if (typeof Date.prototype.toLocaleDateString !== 'function') {
     return date;
   }
 
-  date = new Date(date);
+  const newDate = new Date(date);
   const args = [
     lang,
     { day: 'numeric', month: 'long', year: 'numeric' },
   ].filter(Boolean);
-  return date.toLocaleDateString(...args);
+  return newDate.toLocaleDateString(...(args as any));
 }

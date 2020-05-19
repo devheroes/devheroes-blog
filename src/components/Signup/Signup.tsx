@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
 
 import './Signup.css';
 
-function Signup() {
+export default function Signup() {
   const [inputs, setInputs] = useState({ name: '', email: '' });
 
-  function handleInputChange(event) {
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     event.persist();
     setInputs(inputs => ({
       ...inputs,
@@ -13,7 +13,7 @@ function Signup() {
     }));
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     fetch('https://api.mailerlite.com/api/v2', {
@@ -174,5 +174,3 @@ function Signup() {
     </form>
   );
 }
-
-export default Signup;
