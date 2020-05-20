@@ -1,4 +1,7 @@
 import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+
 import { formatPostDate, formatReadingTime } from '../utils/helpers';
 
 import Footer from '../components/Footer';
@@ -36,6 +39,15 @@ type Props = {
         };
       }>;
     };
+    avatars: {
+      edges: Array<{
+        node: {
+          childImageSharp: {
+            fixed: GatsbyImageSharpFixed;
+          };
+        };
+      }>;
+    };
   };
   pageContext: {
     langKey: string;
@@ -51,6 +63,7 @@ export default function BlogIndexTemplate({
   const langKey = pageContext.langKey;
 
   const posts = data.allMarkdownRemark.edges;
+  console.log({ data });
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -73,6 +86,9 @@ export default function BlogIndexTemplate({
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           const author = node.frontmatter.author;
+          const avatar = data.avatars.edges.find(avatar =>
+            avatar.node.childImageSharp.fixed.src.includes(author)
+          );
 
           return (
             <article key={node.fields.slug}>
@@ -92,30 +108,14 @@ export default function BlogIndexTemplate({
                     {title}
                   </Link>
                 </h3>
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    margin: '8px 0',
-                  }}
-                >
-                  <img
-                    src={authors[author].profilePic}
-                    alt={authors[author].name}
-                    style={{
-                      marginRight: rhythm(1 / 2),
-                      marginBottom: 0,
-                      width: rhythm(1.25),
-                      height: rhythm(1.25),
-                      borderRadius: '50%',
-                    }}
-                  />
+                <ArticleInfo>
+                  {avatar && <Img fixed={avatar.node.childImageSharp.fixed} />}
                   <small>
                     {authors[author].name}
                     {` • ${formatPostDate(node.frontmatter.date, langKey)}`}
                     {` • ${formatReadingTime(node.timeToRead)}`}
                   </small>
-                </div>
+                </ArticleInfo>
               </header>
               <p
                 dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
@@ -128,6 +128,19 @@ export default function BlogIndexTemplate({
     </Layout>
   );
 }
+
+const ArticleInfo = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+
+  small {
+    margin-left: 16px;
+  }
+  img {
+    border-radius: 50%;
+  }
+`;
 
 export const pageQuery = graphql`
   query($langKey: String!) {
@@ -153,6 +166,17 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
+          }
+        }
+      }
+    }
+    avatars: allFile(filter: { relativePath: { regex: "/authors/" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fixed(width: 32, height: 32, quality: 100) {
+              ...GatsbyImageSharpFixed_tracedSVG
+            }
           }
         }
       }
