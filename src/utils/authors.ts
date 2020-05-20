@@ -1,9 +1,5 @@
-import mdapper from '../assets/authors/mdapper.jpg';
-import fxcosta from '../assets/authors/fxcosta.jpg';
-
 type Authors = {
   [key: string]: {
-    profilePic: any;
     name: string;
     url: string;
     bio: string;
@@ -12,14 +8,12 @@ type Authors = {
 
 export const authors: Authors = {
   mdapper: {
-    profilePic: mdapper,
     name: 'Marcelo Dapper',
     url: 'https://twitter.com/mdapper',
     bio:
       'Desenvolvedor front-end, atualmente focado em construir plicações com JavaScript e React',
   },
   fxcosta: {
-    profilePic: fxcosta,
     name: 'Felix Costa',
     url: 'https://twitter.com/fxcosta',
     bio:
