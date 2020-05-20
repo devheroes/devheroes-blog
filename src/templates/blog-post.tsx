@@ -26,9 +26,9 @@ const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 
 type TranslationsProps = {
   editUrl: string;
-  langKey: string;
-  languageLink: (language: string) => string;
-  translations: Array<string>;
+  langKey: LangKey;
+  languageLink: (language: LangKey) => string;
+  translations: Array<LangKey>;
 };
 
 function Translations({
@@ -86,7 +86,7 @@ type Post = {
     };
   };
   fields: {
-    langKey: string;
+    langKey: LangKey;
     slug: string;
   };
   timeToRead: number;
@@ -104,12 +104,21 @@ type Props = {
       };
     };
     markdownRemark: Post;
+    avatars: {
+      edges: Array<{
+        node: {
+          childImageSharp: {
+            fixed: GatsbyImageSharpFixed;
+          };
+        };
+      }>;
+    };
   };
   pageContext: {
     previous: Post;
     next: Post;
     slug: string;
-    translations: Array<string>;
+    translations: Array<LangKey>;
     translatedLinks: Array<string>;
   };
 };
@@ -237,7 +246,7 @@ export default function BlogPostTemplate({
             DevHeroes
           </Link>
         </h3>
-        <Bio author={post.frontmatter.author} />
+        <Bio author={post.frontmatter.author} avatars={data.avatars} />
         <nav>
           <ul
             style={{
@@ -297,6 +306,17 @@ export const pageQuery = graphql`
       fields {
         slug
         langKey
+      }
+    }
+    avatars: allFile(filter: { relativePath: { regex: "/authors/" } }) {
+      edges {
+        node {
+          childImageSharp {
+            fixed(width: 48, height: 48, quality: 100) {
+              ...GatsbyImageSharpFixed_tracedSVG
+            }
+          }
+        }
       }
     }
   }
