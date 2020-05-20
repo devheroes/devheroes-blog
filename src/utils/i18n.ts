@@ -1,12 +1,10 @@
 import { supportedLanguages } from '../../i18n';
 import { whitelist } from './whitelist';
 
-type Code = 'en' | 'es' | 'pt-br';
-
-export const codeToLanguage = (code: Code) =>
+export const codeToLanguage = (code: LangKey) =>
   supportedLanguages[code].replace(/ /g, ' ' /* nbsp */);
 
-export const loadFontsForCode = (code: Code) => {
+export const loadFontsForCode = (code: LangKey) => {
   switch (code) {
     case 'es':
     case 'pt-br':
@@ -26,7 +24,7 @@ export const createLanguageLink = (slug: string, lang: string) => {
     targetLang === 'pt-br' ? rawSlug : `${targetLang}${rawSlug}`;
 };
 
-export const replaceAnchorLinksByLanguage = (html: string, code: Code) => {
+export const replaceAnchorLinksByLanguage = (html: string, code: LangKey) => {
   // Match any link using https://regexr.com/4airl
   const matches = html.match(/https?:\/\/(www)?[^\/\s)"?]+/gm);
 

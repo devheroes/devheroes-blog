@@ -8,7 +8,7 @@ type Props = {
   meta?: [];
   slug?: string;
   title?: string;
-  langKey?: string;
+  langKey?: LangKey;
 };
 
 const query = graphql`

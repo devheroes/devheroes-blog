@@ -5,3 +5,13 @@ interface Window {
 }
 
 declare var window: Window;
+
+type GatsbyImageSharpFixed = {
+  height: number;
+  src: string;
+  srcSet: string;
+  tracedSVG: string;
+  width: number;
+};
+
+type LangKey = 'en' | 'es' | 'pt-br';
