@@ -19,7 +19,7 @@ type Props = {
 };
 
 export default function Bio({ author, avatars }: Props) {
-  const avatar = avatars.edges.find(avatar =>
+  const avatar = avatars.edges.find((avatar) =>
     avatar.node.childImageSharp.gatsbyImageData.images.fallback?.src.includes(
       author
     )

@@ -196,7 +196,7 @@ export default class Toggle extends PureComponent<Props, State> {
 
         <input
           {...inputProps}
-          ref={ref => {
+          ref={(ref) => {
             this.input = ref;
           }}
           onFocus={this.handleFocus}

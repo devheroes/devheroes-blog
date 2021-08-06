@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "gatsby develop",
-    "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,json,css}}'",
+    "format": "prettier --write '{gatsby-*.js,src/**/*.{js,jsx,ts,tsx,json,css}}'",
     "gatsby:develop": "gatsby develop --open",
     "gatsby:clean": "gatsby clean",
     "start": "yarn gatsby:develop",
@@ -68,7 +68,7 @@
     }
   },
   "lint-staged": {
-    "{gatsby-*.js,src/**/*.{js,jsx,json,css}}": [
+    "{gatsby-*.js,src/**/*.{js,jsx,ts,tsx,json,css}}": [
       "yarn format"
     ]
   }
