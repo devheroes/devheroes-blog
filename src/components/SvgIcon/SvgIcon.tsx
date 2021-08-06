@@ -43,6 +43,6 @@ const Svg = styled.svg<Props>`
   height: 1em;
   display: block;
   flex-shrink: 0;
-  font-size: ${props => props.size};
-  color: ${props => (props.color ? props.color : 'var(--bg-inverted)')};
+  font-size: ${(props) => props.size};
+  color: ${(props) => (props.color ? props.color : 'var(--bg-inverted)')};
 `;

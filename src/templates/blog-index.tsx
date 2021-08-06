@@ -85,7 +85,7 @@ export default function BlogIndexTemplate({
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           const author = node.frontmatter.author;
-          const avatar = data.avatars.edges.find(avatar =>
+          const avatar = data.avatars.edges.find((avatar) =>
             avatar.node.childImageSharp.gatsbyImageData.images.fallback?.src.includes(
               author
             )
@@ -148,7 +148,7 @@ const ArticleInfo = styled.div`
 `;
 
 export const pageQuery = graphql`
-  query($langKey: String!) {
+  query ($langKey: String!) {
     site {
       siteMetadata {
         title

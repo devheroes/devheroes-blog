@@ -7,7 +7,7 @@ export default function Signup() {
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     event.persist();
-    setInputs(inputs => ({
+    setInputs((inputs) => ({
       ...inputs,
       [event.target.name]: event.target.value,
     }));

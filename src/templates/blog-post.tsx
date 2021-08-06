@@ -141,7 +141,7 @@ export default function BlogPostTemplate({
   // see utils/whitelist.js
   html = replaceAnchorLinksByLanguage(html, langKey);
 
-  translatedLinks.forEach(link => {
+  translatedLinks.forEach((link) => {
     // jeez
     function escapeRegExp(str: string) {
       return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
