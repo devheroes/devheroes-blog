@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link, graphql } from 'gatsby';
+import { IGatsbyImageData } from 'gatsby-plugin-image';
 
 import '../fonts/fonts-post.css';
 import Bio from '../components/Bio';
@@ -108,7 +109,7 @@ type Props = {
       edges: Array<{
         node: {
           childImageSharp: {
-            fixed: GatsbyImageSharpFixed;
+            gatsbyImageData: IGatsbyImageData;
           };
         };
       }>;
@@ -312,9 +313,12 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            fixed(width: 48, height: 48, quality: 100) {
-              ...GatsbyImageSharpFixed_tracedSVG
-            }
+            gatsbyImageData(
+              width: 64
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+              quality: 100
+            )
           }
         }
       }

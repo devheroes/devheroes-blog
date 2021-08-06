@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { rhythm } from '../../utils/typography';
 import { authors } from '../../utils/authors';
@@ -11,7 +11,7 @@ type Props = {
     edges: Array<{
       node: {
         childImageSharp: {
-          fixed: GatsbyImageSharpFixed;
+          gatsbyImageData: IGatsbyImageData;
         };
       };
     }>;
@@ -20,12 +20,15 @@ type Props = {
 
 export default function Bio({ author, avatars }: Props) {
   const avatar = avatars.edges.find(avatar =>
-    avatar.node.childImageSharp.fixed.src.includes(author)
+    avatar.node.childImageSharp.gatsbyImageData.images.fallback?.src.includes(
+      author
+    )
   );
+  const image = avatar && getImage(avatar.node.childImageSharp.gatsbyImageData);
 
   return (
     <Container>
-      {avatar && <Img fixed={avatar.node.childImageSharp.fixed} />}
+      <div>{avatar && image && <GatsbyImage image={image} alt={author} />}</div>
       <P>
         <a href={authors[author].url}>{authors[author].name}</a> —{' '}
         {authors[author].bio}
