@@ -1,6 +1,6 @@
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { formatPostDate, formatReadingTime } from '../utils/helpers';
 
@@ -43,7 +43,7 @@ type Props = {
       edges: Array<{
         node: {
           childImageSharp: {
-            fixed: GatsbyImageSharpFixed;
+            gatsbyImageData: IGatsbyImageData;
           };
         };
       }>;
@@ -63,7 +63,6 @@ export default function BlogIndexTemplate({
   const langKey = pageContext.langKey;
 
   const posts = data.allMarkdownRemark.edges;
-  console.log({ data });
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -87,8 +86,12 @@ export default function BlogIndexTemplate({
           const title = node.frontmatter.title || node.fields.slug;
           const author = node.frontmatter.author;
           const avatar = data.avatars.edges.find(avatar =>
-            avatar.node.childImageSharp.fixed.src.includes(author)
+            avatar.node.childImageSharp.gatsbyImageData.images.fallback?.src.includes(
+              author
+            )
           );
+          const image =
+            avatar && getImage(avatar.node.childImageSharp.gatsbyImageData);
 
           return (
             <article key={node.fields.slug}>
@@ -109,7 +112,9 @@ export default function BlogIndexTemplate({
                   </Link>
                 </h3>
                 <ArticleInfo>
-                  {avatar && <Img fixed={avatar.node.childImageSharp.fixed} />}
+                  {avatar && image && (
+                    <GatsbyImage image={image} alt={author} />
+                  )}
                   <small>
                     {authors[author].name}
                     {` • ${formatPostDate(node.frontmatter.date, langKey)}`}
@@ -174,9 +179,11 @@ export const pageQuery = graphql`
       edges {
         node {
           childImageSharp {
-            fixed(width: 32, height: 32, quality: 100) {
-              ...GatsbyImageSharpFixed_tracedSVG
-            }
+            gatsbyImageData(
+              width: 32
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }
