@@ -21,7 +21,7 @@ export const createLanguageLink = (slug: string, lang: string) => {
   const rawSlug = slug.replace(`${lang}/`, '');
 
   return (targetLang: string) =>
-    targetLang === 'pt-br' ? rawSlug : `${targetLang}${rawSlug}`;
+    targetLang === 'pt-br' ? rawSlug : `/${targetLang}${rawSlug}`;
 };
 
 export const replaceAnchorLinksByLanguage = (html: string, code: LangKey) => {
