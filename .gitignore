@@ -72,4 +72,7 @@ yarn-error.log
 # Webstorm
 .idea
 
+# VS Code
+.vscode
+
 .env.development
